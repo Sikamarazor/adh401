@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html">
+	
+    <h:head>
+        <title>Digibank client</title>
+    </h:head>
+    <h:body style="color:red">
+    	<h2>international money transfers</h2>
+    	<h:form>
+    		<h:panelGrid columns="2" >
+    		<h:outputLabel value="Name : "/>
+    	   <h:inputText value="#{personcontroller.person.name}"></h:inputText>
+    	   <h:outputLabel value="Source Passport : "/>
+    	   <h:inputText value="#{personcontroller.person.sourcePassport}"></h:inputText>
+    	   <h:outputLabel value="Destination passport : "/>
+    	   <h:inputText value="#{personcontroller.person.destinationPassport}">
+               </h:inputText>
+           <h:outputLabel value="Destination bank : "/>
+           <h:inputText value="#{personcontroller.person.destinationBank}">
+               </h:inputText>
+           <h:outputLabel value="Destination country : "/>
+           <h:inputText value="#{personcontroller.person.destationCountry}">
+               </h:inputText>
+           <h:outputLabel value="Account number : "/>
+           <h:inputText maxlength="12" value="#{personcontroller.person.accNumber}" required="true" type="number">
+               </h:inputText>
+           <h:outputLabel value="Amount : "/>
+           <h:inputText maxlength="10" value="#{personcontroller.person.amount}" required="true" type="number">
+               </h:inputText>
+    	   </h:panelGrid>
+    	   <h:commandButton value="Capture details" action="#{personcontroller.addNewTransaction()}"></h:commandButton>
+    	   <h:commandButton value="View captured details" action="#{personcontroller.viewTransaction()}"></h:commandButton>
+    	</h:form>
+    </h:body>
+</html>
